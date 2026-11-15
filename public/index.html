@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es-GT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#4F46E5">
+  <title>Reg-Estudiantes GT</title>
+  <link rel="icon" href="/assets/marca.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="/assets/estilos.css" rel="stylesheet">
+  <script type="module" src="/assets/app.js"></script>
+</head>
+<body>
+  <header class="barra">
+    <div class="marco barra-interior">
+      <a class="marca" href="#registro"><img src="/assets/marca.svg" width="38" height="38" alt="">Reg-Estudiantes <span>GT</span></a>
+      <nav aria-label="Secciones">
+        <a href="#registro" aria-current="page">Registro</a>
+        <a href="#consulta">Consulta</a>
+      </nav>
+    </div>
+  </header>
+  <main class="marco">
+    <section id="registro" aria-labelledby="titulo-registro">
+      <div class="portal">
+        <div class="portal-texto">
+          <div class="rotulo"><span></span> GESTIÓN ACADÉMICA</div>
+          <h1 id="titulo-registro" tabindex="-1">Registro<br class="corte"> estudiantil<span class="punto">.</span></h1>
+          <p>Ingresa los datos del estudiante para incorporarlo al directorio académico.</p>
+        </div>
+        <div class="portal-arte" aria-hidden="true">
+          <div class="orbita"></div>
+          <div class="carnet sombra-carnet"></div>
+          <div class="carnet">
+            <div class="carnet-superior"><span>GT</span><i></i></div>
+            <div class="carnet-contenido"><div class="retrato"></div><div class="trazos"><i></i><i></i><i></i></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-registro">
+        <div class="panel-encabezado"><h2>Datos del estudiante</h2><span>Todos los campos son obligatorios.</span></div>
+        <form id="formulario" novalidate>
+          <div id="campos" class="rejilla"></div>
+          <div class="acciones-formulario">
+            <div class="captcha-zona"><div id="captcha"></div><p id="estado-captcha" class="estado-captcha" role="status">Cargando verificación…</p><button type="button" class="enlace" id="reintentar-captcha" hidden>Reintentar verificación</button></div>
+            <button class="btn boton-primario" id="guardar" type="submit" disabled>Registrar estudiante <span aria-hidden="true">→</span></button>
+          </div>
+          <p id="estado-formulario" class="mensaje" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+    <section id="consulta" aria-labelledby="titulo-consulta" hidden>
+      <div class="portal portal-consulta">
+        <div class="portal-texto">
+          <div class="rotulo"><span></span> GESTIÓN ACADÉMICA</div>
+          <h1 id="titulo-consulta" tabindex="-1">Directorio<br class="corte"> estudiantil<span class="punto">.</span></h1>
+          <p>Consulta y busca los registros guardados.</p>
+        </div>
+        <div class="portal-arte" aria-hidden="true">
+          <div class="orbita"></div>
+          <div class="carnet sombra-carnet"></div>
+          <div class="carnet carnet-lista"><div class="carnet-superior"><span>GT</span><i></i></div><div class="filas-arte"><i></i><i></i><i></i></div></div>
+        </div>
+      </div>
+      <div class="panel panel-consulta">
+        <div class="herramientas">
+          <div class="buscar"><label for="buscar">Buscar estudiantes</label><input class="form-control" type="search" id="buscar" placeholder="Buscar por cualquier campo…" autocomplete="off"></div>
+          <button class="btn boton-secundario" id="actualizar" type="button"><span aria-hidden="true">↻</span> Actualizar</button>
+        </div>
+        <p class="estado-tabla" id="estado-tabla" role="status">Cargando registros…</p>
+        <div class="tabla-contenedor" tabindex="0" role="region" aria-label="Tabla de estudiantes registrados">
+          <table class="table">
+            <caption class="visually-hidden">Estudiantes registrados</caption>
+            <thead><tr id="columnas"></tr></thead>
+            <tbody id="filas"></tbody>
+          </table>
+        </div>
+        <div class="paginacion" id="paginacion" hidden>
+          <button type="button" class="btn boton-pagina" id="anterior">Anterior</button>
+          <span id="pagina-actual"></span>
+          <button type="button" class="btn boton-pagina" id="siguiente">Siguiente</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
